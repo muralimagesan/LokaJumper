@@ -1,6 +1,7 @@
 // Project: Loka Jumper
 // Author:  Murali Krishna Magesan
 // Date:    15 September 2022
+// Updated: 27 June 2023
 
 //            _____           _______                   _____                    _____                             _____                    _____                    _____                    _____                    _____                    _____
 //           /\    \         /::\    \                 /\    \                  /\    \                           /\    \                  /\    \                  /\    \                  /\    \                  /\    \                  /\    \
@@ -56,6 +57,7 @@ enum LOKAS
     MAX_NUM_LOKAS
 };
 
+bool gameInitialised;
 /******************************************************************************
  *                           Local Define
  ******************************************************************************/
@@ -90,11 +92,7 @@ void PrintGameStartupScreen()
 
 void PrintLokaIntro(int LokaIndex, string* LokaArray)
 {
-    if (LokaIndex == PATALA)
-    {
-        // Do Nothing
-    }
-    else if (LokaIndex == BHU_LOKA_TRANSITION)
+    if (LokaIndex == BHU_LOKA_TRANSITION)
     {
         // Print closing messages to the terminal
         std::cout <<"**********************************************************************************************************************************" << std::endl;
@@ -105,7 +103,14 @@ void PrintLokaIntro(int LokaIndex, string* LokaArray)
     }
     else
     {
-        std::cout << "You have reached " << LokaArray[LokaIndex] << ". To get one step closer to Mahakailasa, solve the combination challenge of " << LokaArray[LokaIndex] << std::endl;
+        if (!gameInitialised)       /* Logic to ensure this message is printed only after 2nd game loop onwards */
+        {
+            gameInitialised = true;
+        }
+        else
+        {
+            std::cout << "You have reached " << LokaArray[LokaIndex] << ". To get one step closer to Mahakailasa, solve the combination challenge of " << LokaArray[LokaIndex] << std::endl;
+        }
     }
 }
 
@@ -204,7 +209,7 @@ bool PlayGame(int LevelDifficulty)
     }
     else
     {
-        std::cout << "\nYou have answered incorrectly! You will need to take another janma starting from the previous Loka" << std::endl;
+        std::cout << "\nYou have answered incorrectly! You will need to take another janma starting from a lower loka" << std::endl;
         std::cout << "Remember, Paramashiva will only test, but He will never deny." << std::endl;
         std::cout << "Vibrating with the Mahavakya of Om Nithyananda Paramashivoham, let us make our way to Mahakailasa!\n" << std::endl;
 
@@ -282,6 +287,8 @@ int main()          // Main Function
     string Loka[MAX_NUM_LOKAS] LokaStringArray;
 
     string* LokaPtr = Loka;
+
+    gameInitialised = false;
 
     PrintGameStartupScreen();
     while (LokaIndex < (MAX_NUM_LOKAS - 1))    // Loop game until
