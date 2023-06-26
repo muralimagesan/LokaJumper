@@ -1,0 +1,4 @@
+- Simple number puzzle game
+- Learning about various lokas as per Hindu Dharma and reality of initiation by Hindu Guru.
+- Need to find a valid combination of numbers to move to different lokas
+- Target is younger audience - so game level is easy - but designed so it can be made challenging.
