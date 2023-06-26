@@ -83,7 +83,7 @@ void PrintGameStartupScreen()
                     )";
 
     // Print welcome messages to the terminal
-    std::cout << "You are a Cosmic Being stuck in Patala Loka and looking to find a way back to Mahakailasa..." << std::endl; //An example of Expression Statement
+    std::cout << "You are a Cosmic Being stuck in Patala Loka and looking to find a way back to Mahakailasa..." << std::endl;
     std::cout << "                       Using the initiation into the Universe of Numbers by SPH Sri Nithyananda Paramashivam," << std::endl;
     std::cout << "                         Ascend to Mahakailasa by solving the number combination challenge on each Loka...\n" << std::endl;
 }
@@ -97,8 +97,8 @@ void PrintLokaIntro(int LokaIndex, string* LokaArray)
     else if (LokaIndex == BHU_LOKA_TRANSITION)
     {
         // Print closing messages to the terminal
-        std::cout <<"**********************************************************************************************************************************" << std::endl; //An example of Expression Statement
-        std::cout <<"*                                           You are one step away from reaching Mahakailasa!                                     *" << std::endl; //An example of Expression Statement
+        std::cout <<"**********************************************************************************************************************************" << std::endl;
+        std::cout <<"*                                           You are one step away from reaching Mahakailasa!                                     *" << std::endl;
         std::cout <<"*   With your human birth on Bhuloka, you now have the choice of Dharma, Adharma or going beyond both...What will you decide?    *" << std::endl;
         std::cout <<"*                                      If you want to reach Mahakailasa...you know what to do!                                   *" << std::endl;
         std::cout <<"**********************************************************************************************************************************" << std::endl;
@@ -148,7 +148,7 @@ bool PlayGame(int LevelDifficulty)
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     // Print CodeSum and CodeProduct to the terminal
-    std::cout << std::endl; //An example of Expression Statement
+    std::cout << std::endl;
     std::cout <<"There are 3 numbers in this loka" << std::endl; //An example of Expression Statement
     std::cout <<"The numbers add-up to: " << CodeSum << std::endl;
     std::cout <<"The numbers multiply to give: " << CodeProduct << std::endl;
@@ -180,10 +180,6 @@ bool PlayGame(int LevelDifficulty)
             std::cout << "Please ensure you enter the 1st number followed with a single space, followed by the 2nd number with a single space and then the last number followed immediately with the 'Enter' key." << std::endl;
             std::cout << "Below is an example of correct user input. Please note the '<--' is representing the 'Enter' key" << std::endl;
             std::cout << "1 2 3<--\n" << std::endl;
-
-            std::cout << "The numbers add-up to: " << GuessA << std::endl;
-            std::cout << "The numbers add-up to: " << GuessB << std::endl;
-            std::cout << "The numbers add-up to: " << GuessC << std::endl;
 
             std::cout << "Please enter the 3 numbers again to ascend from this loka" << std::endl;
             std::cout << "The numbers add-up to: " << CodeSum << std::endl;
